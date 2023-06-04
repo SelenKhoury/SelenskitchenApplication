@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Selen\'s kitchen Application</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="selen_s_restaurant_app">Selen\'s Restaurant App</string>
+    <string name="welcome_to_my_restaurant">Welcome To My Restaurant</string>
+    <string name="sign_in">Sign In</string>
+    <string name="my_restaurant">My Restaurant</string>
+    <string name="register">Register</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="your_e_already_signed">Your\'e Already Signed ?</string>
+    <string name="signin">SignIn</string>
+    <string name="don_t_have_an_account">Don\'t Have An Account?</string>
+    <string name="log_in">Log In</string>
+    <string name="Settings" />
+    <string name="Help" />
+    <string name="About" />
+    <string name="Home" />
+    <string name="LogOut" />
+    <string name="operating_hours_monday_to_sunday_9_00_am_10_00_pm">Operating Hours: Monday to Sunday, 9:00 AM - 10:00 PM</string>
+</resources>
