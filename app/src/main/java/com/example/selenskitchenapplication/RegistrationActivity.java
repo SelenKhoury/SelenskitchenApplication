@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
@@ -27,9 +26,6 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class RegistrationActivity extends AppCompatActivity {
 
     private EditText nameEditText, emailEditText, passwordEditText;
@@ -38,22 +34,17 @@ public class RegistrationActivity extends AppCompatActivity {
 
     private SharedPreferences sharedPreferences;
 
-    private static final String TAG = "RegistrationActivity";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-
-        FirebaseApp.initializeApp(this);
 
         // Initialize views
         nameEditText = findViewById(R.id.nameEditText);
         emailEditText = findViewById(R.id.emailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         registerButton = findViewById(R.id.registerButton);
-
-        progressBar = findViewById(R.id.ProgressBar); // Replace R.id.progressBar with the actual ID of your ProgressBar in the XML layout
+        progressBar = findViewById(R.id.ProgressBar);
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,6 +91,10 @@ public class RegistrationActivity extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
+
+        // Enter User data into the Firebase Realtime Database
+        ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(passwordEditText);
+
         // Create user Profile
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this,
                 new OnCompleteListener<AuthResult>() {
@@ -113,7 +108,7 @@ public class RegistrationActivity extends AppCompatActivity {
                             firebaseUser.updateProfile(profileChangeRequest);
                             // Enter User data into the Firebase Realtime Database
                             DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("Registered User");
-                            referenceProfile.child(firebaseUser.getUid()).setValue(firebaseUser).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            referenceProfile.child(firebaseUser.getUid()).setValue(writeUserDetails).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
