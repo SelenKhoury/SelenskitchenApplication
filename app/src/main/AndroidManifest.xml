@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.selenskitchenapplication">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -43,7 +46,9 @@
         <activity android:name=".CustomGalleryActivity" />
 
         <!-- FoodTypeActivity -->
-        <activity android:name=".FoodTypeActivity" />
+        <activity
+            android:name=".FoodTypeActivity"
+            android:label="Food Type Activity" />
 
         <!-- HomeActivity -->
         <activity android:name=".HomeActivity" />

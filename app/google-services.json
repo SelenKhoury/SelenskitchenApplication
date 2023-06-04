@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "714999006288",
+    "project_id": "selen-s-kitchen-applicat-914bc",
+    "storage_bucket": "selen-s-kitchen-applicat-914bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:714999006288:android:c27f841c8de383fc44fd55",
+        "android_client_info": {
+          "package_name": "com.example.selenskitchenapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "714999006288-c9jprd7ktiaogniieja2f3ivbtd25m1j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXnTJcRERwEHx2-1_PlZd1AwMvJ42thBs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "714999006288-c9jprd7ktiaogniieja2f3ivbtd25m1j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

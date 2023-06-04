@@ -27,4 +27,5 @@
     <string name="Home" />
     <string name="LogOut" />
     <string name="operating_hours_monday_to_sunday_9_00_am_10_00_pm">Operating Hours: Monday to Sunday, 9:00 AM - 10:00 PM</string>
+    <string name="add_to_cart" />
 </resources>

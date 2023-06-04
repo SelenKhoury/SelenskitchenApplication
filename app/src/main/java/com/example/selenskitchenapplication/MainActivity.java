@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the alarm to trigger the notification every 24 hours
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        long interval = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+        long interval = 3000; // 24 hours in milliseconds
         long triggerTime = System.currentTimeMillis() + interval;
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, triggerTime, interval, pendingIntent);
     }

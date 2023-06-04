@@ -8,13 +8,12 @@
 
     <ImageView
         android:id="@+id/header_image"
-        android:layout_width="400dp"
+        android:layout_width="0dp"
         android:layout_height="102dp"
         android:layout_marginTop="16dp"
         android:scaleType="centerCrop"
         android:src="@drawable/kitchenapplogon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,110 +30,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/italy" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Italian Food"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:padding="8dp" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/israel" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Israeli Food"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:padding="8dp" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/china" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Chinese Food"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:padding="8dp" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/japan" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Japanese Food"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:padding="8dp" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/mexico" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Mexican Food"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:padding="8dp" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/greece" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Greek Food"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:padding="8dp" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/france" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="French Food"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:padding="8dp" />
         </LinearLayout>
     </ScrollView>
 

@@ -25,7 +25,6 @@ public class FoodTypeActivity extends AppCompatActivity {
     private Map<String, List<String>> foodItems;
     private List<String> cartItems;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -161,6 +160,11 @@ public class FoodTypeActivity extends AppCompatActivity {
         greekFoodItems.add("Tzatziki");
         greekFoodItems.add("Spanakopita");
         greekFoodItems.add("Souvlaki");
+        greekFoodItems.add("Dolmades");
+        greekFoodItems.add("Pastitsio");
+        greekFoodItems.add("Baklava");
+        greekFoodItems.add("Loukoumades");
+        greekFoodItems.add("Greek Salad");
         foodItems.put("Greek Food", greekFoodItems);
 
         displayFoodItems(greekFoodItems);

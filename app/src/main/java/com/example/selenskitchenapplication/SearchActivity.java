@@ -15,6 +15,7 @@ import java.util.List;
 public class SearchActivity extends AppCompatActivity {
 
     private List<String> yourDataList; // Replace with your actual data list
+    private List<String> filteredDataList; // List to store filtered data
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class SearchActivity extends AppCompatActivity {
         yourDataList = new ArrayList<>();
 
         // Add your data to yourDataList
+        // Add French food types
         yourDataList.add("Coq Au Vin");
         yourDataList.add("Croque-Monsieur");
         yourDataList.add("Meuniére");
@@ -34,7 +36,7 @@ public class SearchActivity extends AppCompatActivity {
         yourDataList.add("Spring Vegetable Stew");
         yourDataList.add("Salmon En Papillote");
 
-// Add Greek food types
+        // Add Greek food types
         yourDataList.add("Gemista (Stuffed Veggies with Rice)");
         yourDataList.add("Giouvetsi (Beef Stew with Orzo Pasta)");
         yourDataList.add("Briam (Roasted Vegetables)");
@@ -51,7 +53,7 @@ public class SearchActivity extends AppCompatActivity {
         yourDataList.add("Tirokroketes (Fried Cheese Balls)");
         yourDataList.add("Stifado (Greek Beef Stew)");
 
-// Add Mexican food types
+        // Add Mexican food types
         yourDataList.add("Burritos");
         yourDataList.add("Caldo Azteca (Aztec Soup)");
         yourDataList.add("Tacos");
@@ -60,14 +62,14 @@ public class SearchActivity extends AppCompatActivity {
         yourDataList.add("Huevos Rancheros (Ranch Eggs)");
         yourDataList.add("Enchiladas");
 
-// Add Chinese food types
+        // Add Chinese food types
         yourDataList.add("Chinese Braised Lamb Casserole, Hong-Kong Style");
         yourDataList.add("Juicy Pork and Chive Pan-Fried Dumplings");
         yourDataList.add("Sticky Garlic Sesame Chicken");
         yourDataList.add("Lo Mein Noodles");
         yourDataList.add("Roast Pork with Chinese Vegetables");
 
-// Add Japanese food types
+        // Add Japanese food types
         yourDataList.add("Yakitori (Japanese-style Grilled Skewered Chicken)");
         yourDataList.add("Gyoza");
         yourDataList.add("Sukiyaki");
@@ -79,7 +81,7 @@ public class SearchActivity extends AppCompatActivity {
         yourDataList.add("Gyudon");
         yourDataList.add("Miso Soup");
 
-// Add Israeli food types
+        // Add Israeli food types
         yourDataList.add("Falafel");
         yourDataList.add("Hummus");
         yourDataList.add("Jachnun");
@@ -90,7 +92,7 @@ public class SearchActivity extends AppCompatActivity {
         yourDataList.add("Shawarma");
         yourDataList.add("Mujadara");
 
-// Add Italian food types
+        // Add Italian food types
         yourDataList.add("Italian Pot Roast made Tuscan style");
         yourDataList.add("Italian Ravioli with Spinach, Artichokes, Capers, Sun-Dried Tomatoes");
         yourDataList.add("Caprese Salad");
@@ -100,12 +102,13 @@ public class SearchActivity extends AppCompatActivity {
         yourDataList.add("Tagliatelle Bolognese");
         yourDataList.add("One Pan Tomato Basil Pasta");
 
+        // Initialize the filteredDataList
+        filteredDataList = new ArrayList<>();
     }
 
-    @SuppressLint("ResourceType")
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.id.menu_search, menu);
+        getMenuInflater().inflate(R.menu.menu_search, menu);
 
         MenuItem searchItem = menu.findItem(R.id.menu_search);
         SearchView searchView = (SearchView) searchItem.getActionView();
@@ -147,11 +150,13 @@ public class SearchActivity extends AppCompatActivity {
         // Update the search results accordingly
         // For example, you can update a ListView or RecyclerView with filtered data
 
-        List<String> filteredData = new ArrayList<>();
+        filteredDataList.clear(); // Clear the previous filtered data
+
         for (String item : yourDataList) {
             if (item.toLowerCase().contains(newText.toLowerCase())) {
-                filteredData.add(item);
+                filteredDataList.add(item);
             }
         }
     }
 }
+
