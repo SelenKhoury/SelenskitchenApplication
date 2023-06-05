@@ -1,8 +1,8 @@
 package com.example.selenskitchenapplication;
 
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -10,7 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
-import android.view.LayoutInflater;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,11 +23,12 @@ public class FoodTypeActivity extends AppCompatActivity {
     private int imageMarginBottom = 16; // Set the desired margin value here
     private Map<String, List<String>> foodItems;
     private List<String> cartItems;
+    private CartManager cartManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.default_food_layout);
 
         scrollView = findViewById(R.id.scroll_view);
         linearLayout = findViewById(R.id.linear_layout);
@@ -36,23 +36,24 @@ public class FoodTypeActivity extends AppCompatActivity {
         cartItems = new ArrayList<>();
         foodItems = new HashMap<>();
 
+        // Create an instance of CartManager
+        cartManager = new CartManager();
+
         // Get the food type from the intent extra
         String foodType = getIntent().getStringExtra("foodType");
+
+        // Set the appropriate layout based on the food type
+        int layoutResId = getLayoutResourceForFoodType(foodType);
+        setContentView(layoutResId);
 
         // Set the title
         TextView titleTextView = findViewById(R.id.title_text_view);
         titleTextView.setText(foodType);
 
-        // Inflate the appropriate layout file based on the food type
-        LayoutInflater inflater = LayoutInflater.from(this);
-        int layoutResId = getLayoutResourceForFoodType(foodType);
-        View foodTypeLayout = inflater.inflate(layoutResId, linearLayout, false);
-        linearLayout.addView(foodTypeLayout);
-
         // Add food items
         addFoodItems(foodType);
     }
-
+/*
     private void addFoodItems(String foodType) {
         switch (foodType) {
             case "Italian Food":
@@ -79,8 +80,16 @@ public class FoodTypeActivity extends AppCompatActivity {
             default:
                 break;
         }
+    }*/
+    private void addFoodItems(String foodType) {
+        List<String> foodTypeItems = foodItems.get(foodType);
+        if (foodTypeItems != null) {
+            displayFoodItems(foodTypeItems);
+        } else {
+            // Food type not found, handle the error or display a message
+        }
     }
-
+    /*
     private void addItalianFoodItems() {
         List<String> italianFoodItems = new ArrayList<>();
         italianFoodItems.add("Italian Pot Roast made Tuscan style");
@@ -92,8 +101,6 @@ public class FoodTypeActivity extends AppCompatActivity {
         italianFoodItems.add("Tagliatelle Bolognese");
         italianFoodItems.add("One Pan Tomato Basil Pasta");
         foodItems.put("Italian Food", italianFoodItems);
-
-        displayFoodItems(italianFoodItems);
     }
 
     private void addIsraeliFoodItems() {
@@ -108,8 +115,6 @@ public class FoodTypeActivity extends AppCompatActivity {
         israeliFoodItems.add("Shawarma");
         israeliFoodItems.add("Mujadara");
         foodItems.put("Israeli Food", israeliFoodItems);
-
-        displayFoodItems(israeliFoodItems);
     }
 
     private void addJapaneseFoodItems() {
@@ -125,8 +130,6 @@ public class FoodTypeActivity extends AppCompatActivity {
         japaneseFoodItems.add("Gyudon");
         japaneseFoodItems.add("Miso Soup");
         foodItems.put("Japanese Food", japaneseFoodItems);
-
-        displayFoodItems(japaneseFoodItems);
     }
 
     private void addChineseFoodItems() {
@@ -137,8 +140,6 @@ public class FoodTypeActivity extends AppCompatActivity {
         chineseFoodItems.add("Lo Mein Noodles");
         chineseFoodItems.add("Roast Pork with Chinese Vegetables");
         foodItems.put("Chinese Food", chineseFoodItems);
-
-        displayFoodItems(chineseFoodItems);
     }
 
     private void addMexicanFoodItems() {
@@ -149,8 +150,6 @@ public class FoodTypeActivity extends AppCompatActivity {
         mexicanFoodItems.add("Tamales");
         mexicanFoodItems.add("Enchiladas");
         foodItems.put("Mexican Food", mexicanFoodItems);
-
-        displayFoodItems(mexicanFoodItems);
     }
 
     private void addGreekFoodItems() {
@@ -160,14 +159,7 @@ public class FoodTypeActivity extends AppCompatActivity {
         greekFoodItems.add("Tzatziki");
         greekFoodItems.add("Spanakopita");
         greekFoodItems.add("Souvlaki");
-        greekFoodItems.add("Dolmades");
-        greekFoodItems.add("Pastitsio");
-        greekFoodItems.add("Baklava");
-        greekFoodItems.add("Loukoumades");
-        greekFoodItems.add("Greek Salad");
         foodItems.put("Greek Food", greekFoodItems);
-
-        displayFoodItems(greekFoodItems);
     }
 
     private void addFrenchFoodItems() {
@@ -179,15 +171,21 @@ public class FoodTypeActivity extends AppCompatActivity {
         frenchFoodItems.add("Ratatouille");
         frenchFoodItems.add("Creme Brulee");
         foodItems.put("French Food", frenchFoodItems);
+    }*/
 
-        displayFoodItems(frenchFoodItems);
-    }
-
-    private void displayFoodItems(List<String> items) {
-        LinearLayout foodLayout = findViewById(R.id.food_layout);
-        for (String item : items) {
+    private void displayFoodItems(List<String> foodTypeItems) {
+        for (String item : foodTypeItems) {
             View foodItemView = createFoodItemView(item);
-            foodLayout.addView(foodItemView);
+            Button orderButton = foodItemView.findViewById(R.id.order_button);
+            orderButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Call the addToCart method of the cartManager
+                    cartManager.addToCart(item);
+                    Toast.makeText(FoodTypeActivity.this, "Added to cart: " + item, Toast.LENGTH_SHORT).show();
+                }
+            });
+            linearLayout.addView(foodItemView);
         }
     }
 
@@ -196,7 +194,6 @@ public class FoodTypeActivity extends AppCompatActivity {
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
         );
-
         LinearLayout foodItemLayout = new LinearLayout(this);
         foodItemLayout.setLayoutParams(layoutParams);
         foodItemLayout.setOrientation(LinearLayout.HORIZONTAL);
@@ -209,30 +206,29 @@ public class FoodTypeActivity extends AppCompatActivity {
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 1
         ));
-
-        ImageView addToCartImageView = new ImageView(this);
-        addToCartImageView.setImageResource(R.drawable.ic_baseline_shopping_cart_24);
-        addToCartImageView.setOnClickListener(new View.OnClickListener() {
+        Button orderButton = new Button(this);
+        orderButton.setText("Order Now");
+        orderButton.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        ));
+        orderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addToCart(item);
+                // Call the addToCart method of the cartManager
+                cartManager.addToCart(item);
+                Toast.makeText(FoodTypeActivity.this, "Added to cart: " + item, Toast.LENGTH_SHORT).show();
             }
         });
 
         foodItemLayout.addView(itemTextView);
-        foodItemLayout.addView(addToCartImageView);
+        foodItemLayout.addView(orderButton);
 
         return foodItemLayout;
     }
-
-    private void addToCart(String item) {
-        cartItems.add(item);
-        Toast.makeText(this, "Added to cart: " + item, Toast.LENGTH_SHORT).show();
-    }
-
-    public void viewCart(View view) {
-        Intent intent = new Intent(this, CartActivity.class);
-        intent.putStringArrayListExtra("cartItems", (ArrayList<String>) cartItems);
+    public void goToFoodType(String foodType) {
+        Intent intent = new Intent(this, FoodTypeActivity.class);
+        intent.putExtra("foodType", foodType);
         startActivity(intent);
     }
 

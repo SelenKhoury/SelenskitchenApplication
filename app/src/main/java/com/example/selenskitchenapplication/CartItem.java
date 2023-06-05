@@ -4,20 +4,15 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class CartItem implements Parcelable {
-    private String name;
-    private double price;
-    private String description;
 
-    public CartItem(String name, double price, String description) {
-        this.name = name;
-        this.price = price;
-        this.description = description;
+    private String foodItem;
+
+    public CartItem(String foodItem) {
+        this.foodItem = foodItem;
     }
 
     protected CartItem(Parcel in) {
-        name = in.readString();
-        price = in.readDouble();
-        description = in.readString();
+        foodItem = in.readString();
     }
 
     public static final Creator<CartItem> CREATOR = new Creator<CartItem>() {
@@ -32,16 +27,12 @@ public class CartItem implements Parcelable {
         }
     };
 
-    public String getName() {
-        return name;
+    public String getFoodItem() {
+        return foodItem;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public String getDescription() {
-        return description;
+    public void setFoodItem(String foodItem) {
+        this.foodItem = foodItem;
     }
 
     @Override
@@ -51,8 +42,6 @@ public class CartItem implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(name);
-        dest.writeDouble(price);
-        dest.writeString(description);
+        dest.writeString(foodItem);
     }
 }

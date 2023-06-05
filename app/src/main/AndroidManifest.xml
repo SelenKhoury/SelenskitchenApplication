@@ -22,11 +22,6 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity android:name=".WelcomeActivity" />
@@ -51,7 +46,14 @@
             android:label="Food Type Activity" />
 
         <!-- HomeActivity -->
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".HomeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <!-- LogInActivity -->
         <activity android:name=".LogInActivity" />
