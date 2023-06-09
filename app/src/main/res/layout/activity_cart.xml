@@ -9,6 +9,7 @@
         android:id="@+id/cart_list_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/checkoutButton"
         android:divider="@null"
         android:dividerHeight="0dp" />
 
@@ -16,9 +17,7 @@
         android:id="@+id/checkoutButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/cart_list_view"
-        android:layout_marginTop="16dp"
+        android:layout_alignParentBottom="true"
         android:text="Checkout" />
 
 </RelativeLayout>
-

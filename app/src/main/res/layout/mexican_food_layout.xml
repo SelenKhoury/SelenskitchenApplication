@@ -51,6 +51,7 @@
                     android:text="Burritos" />
 
                 <Button
+                    android:id="@+id/order_button_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Order Now"
@@ -84,6 +85,7 @@
                     android:text="Caldo Azteca (Aztec Soup)" />
 
                 <Button
+                    android:id="@+id/order_button_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Order Now"
@@ -117,6 +119,7 @@
                     android:text="Tacos" />
 
                 <Button
+                    android:id="@+id/order_button_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Order Now"
@@ -150,6 +153,7 @@
                     android:text="Ceviche" />
 
                 <Button
+                    android:id="@+id/order_button_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Order Now"
@@ -183,6 +187,7 @@
                     android:text="Chilaquiles" />
 
                 <Button
+                    android:id="@+id/order_button_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Order Now"
@@ -216,6 +221,7 @@
                     android:text="Huevos Rancheros (Ranch Eggs)" />
 
                 <Button
+                    android:id="@+id/order_button_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Order Now"
@@ -249,6 +255,7 @@
                     android:text="Enchiladas" />
 
                 <Button
+                    android:id="@+id/order_button_7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Order Now"

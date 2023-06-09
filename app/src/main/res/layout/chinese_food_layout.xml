@@ -51,9 +51,11 @@
                     android:text="Chinese Braised Lamb Casserole, Hong-Kong Style" />
 
                 <Button
+                    android:id="@+id/order_button_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Order Now"
+                    android:tag="Chinese Braised Lamb Casserole, Hong-Kong Style"
                     android:layout_gravity="end"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp" />
@@ -84,9 +86,11 @@
                     android:text="Juicy Pork and Chive Pan-Fried Dumpings" />
 
                 <Button
+                    android:id="@+id/order_button_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Order Now"
+                    android:tag="Juicy Pork and Chive Pan-Fried Dumpings"
                     android:layout_gravity="end"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp" />
@@ -117,9 +121,11 @@
                     android:text="Sticky Garlic Sesame Chicken" />
 
                 <Button
+                    android:id="@+id/order_button_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Order Now"
+                    android:tag="Sticky Garlic Sesame Chicken"
                     android:layout_gravity="end"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp" />
@@ -150,9 +156,11 @@
                     android:text="Lo Mein Noodles" />
 
                 <Button
+                    android:id="@+id/order_button_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Order Now"
+                    android:tag="Lo Mein Noodles"
                     android:layout_gravity="end"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp" />
@@ -183,9 +191,11 @@
                     android:text="Roast Pork with Chinese Vegetables" />
 
                 <Button
+                    android:id="@+id/order_button_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Order Now"
+                    android:tag="Roast Pork with Chinese Vegetables"
                     android:layout_gravity="end"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp" />

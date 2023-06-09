@@ -1,7 +1,5 @@
 package com.example.selenskitchenapplication;
 
-//import static android.os.Build.VERSION_CODES.R;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;

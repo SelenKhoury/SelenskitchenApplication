@@ -3,18 +3,21 @@ package com.example.selenskitchenapplication;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CartManager {
-    private List<String> cartItems;
+import java.util.ArrayList;
+import java.util.List;
 
-    public CartManager() {
-        cartItems = new ArrayList<>();
-    }
+public class CartManager {
+    private static List<String> cartItems = new ArrayList<>();
 
     public void addToCart(String item) {
         cartItems.add(item);
     }
 
-    public List<String> getCartItems() {
+    public static List<String> getCartItems() {
         return cartItems;
+    }
+
+    public static void clearCart() {
+        cartItems.clear();
     }
 }

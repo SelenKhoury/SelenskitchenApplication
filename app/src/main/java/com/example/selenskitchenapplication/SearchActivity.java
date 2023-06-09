@@ -14,7 +14,7 @@ import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
 
-    private List<String> yourDataList; // Replace with your actual data list
+    private List<String> yourDataList;
     private List<String> filteredDataList; // List to store filtered data
 
     @Override

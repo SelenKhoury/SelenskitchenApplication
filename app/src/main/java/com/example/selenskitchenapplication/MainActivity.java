@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
         Intent notificationIntent = new Intent(this, Receiver.class);
         pendingIntent = PendingIntent.getBroadcast(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        // Set the alarm to trigger the notification every 24 hours
+        // Set the alarm to trigger the notification every 3000 sec
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        long interval = 3000; // 24 hours in milliseconds
+        long interval = 3000;
         long triggerTime = System.currentTimeMillis() + interval;
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, triggerTime, interval, pendingIntent);
     }

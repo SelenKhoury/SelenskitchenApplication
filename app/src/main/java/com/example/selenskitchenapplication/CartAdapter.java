@@ -9,28 +9,42 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class CartAdapter extends ArrayAdapter<String> {
+public class CartAdapter extends ArrayAdapter<CartItem> {
 
     private Context context;
-    private List<String> cartItems;
+    private List<CartItem> cartItems;
 
-    public CartAdapter(Context context, List<String> cartItems) {
-        super(context, 0, cartItems);
+    public CartAdapter(Context context, List<CartItem> cartItems) {
+        super(context, R.layout.item_cart, cartItems);
         this.context = context;
         this.cartItems = cartItems;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        String cartItem = getItem(position);
+        ViewHolder viewHolder;
 
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.item_cart, parent, false);
+
+            viewHolder = new ViewHolder();
+            viewHolder.foodItemTextView = convertView.findViewById(R.id.item_name);
+
+            convertView.setTag(viewHolder);
+        } else {
+            viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        TextView cartItemTextView = convertView.findViewById(R.id.cart_item_text_view);
-        cartItemTextView.setText(cartItem);
+        CartItem cartItem = cartItems.get(position);
+
+        if (cartItem != null) {
+            viewHolder.foodItemTextView.setText(cartItem.getFoodItem());
+        }
 
         return convertView;
+    }
+
+    static class ViewHolder {
+        TextView foodItemTextView;
     }
 }

@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "714999006288",
-    "project_id": "selen-s-kitchen-applicat-914bc",
-    "storage_bucket": "selen-s-kitchen-applicat-914bc.appspot.com"
+    "project_number": "121897646510",
+    "firebase_url": "https://selen-s-kitchen-application-default-rtdb.firebaseio.com",
+    "project_id": "selen-s-kitchen-application",
+    "storage_bucket": "selen-s-kitchen-application.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:714999006288:android:c27f841c8de383fc44fd55",
+        "mobilesdk_app_id": "1:121897646510:android:a06332a8da5e618e06b03f",
         "android_client_info": {
           "package_name": "com.example.selenskitchenapplication"
         }
       },
       "oauth_client": [
         {
-          "client_id": "714999006288-c9jprd7ktiaogniieja2f3ivbtd25m1j.apps.googleusercontent.com",
+          "client_id": "121897646510-427pemcatfirebb4qbpg2reos65lubvg.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAXnTJcRERwEHx2-1_PlZd1AwMvJ42thBs"
+          "current_key": "AIzaSyAJ8wzCxr5qB9uioUg_41cU2hAoXY45MSQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "714999006288-c9jprd7ktiaogniieja2f3ivbtd25m1j.apps.googleusercontent.com",
+              "client_id": "121897646510-427pemcatfirebb4qbpg2reos65lubvg.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

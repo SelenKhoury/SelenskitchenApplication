@@ -1,7 +1,5 @@
 package com.example.selenskitchenapplication;
 
-//import static android.os.Build.VERSION_CODES.R;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

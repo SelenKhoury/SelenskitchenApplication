@@ -51,6 +51,7 @@
                     android:text="Coq Au Vin" />
 
                 <Button
+                    android:id="@+id/order_button_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Order Now"
@@ -84,6 +85,7 @@
                     android:text="Croque-Monsieur" />
 
                 <Button
+                    android:id="@+id/order_button_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Order Now"
@@ -117,6 +119,8 @@
                     android:text="Meuniére" />
 
                 <Button
+                    android:id="@+id/order_button_3"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Order Now"
@@ -150,6 +154,8 @@
                     android:text="Potatoes Dauphinoise" />
 
                 <Button
+                    android:id="@+id/order_button_4"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Order Now"
@@ -183,6 +189,8 @@
                     android:text="Quiche Lorraine" />
 
                 <Button
+                    android:id="@+id/order_button_5"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Order Now"
@@ -216,6 +224,8 @@
                     android:text="Salade Landaise" />
 
                 <Button
+                    android:id="@+id/order_button_6"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Order Now"
@@ -249,6 +259,7 @@
                     android:text="Spring Vegetable Stew" />
 
                 <Button
+                    android:id="@+id/order_button_7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Order Now"
@@ -282,6 +293,7 @@
                     android:text="Salmon En Papillote" />
 
                 <Button
+                    android:id="@+id/order_button_8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Order Now"

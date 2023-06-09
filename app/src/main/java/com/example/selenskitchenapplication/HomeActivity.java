@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 public class HomeActivity extends AppCompatActivity {
 
     private LinearLayout linearLayout;
@@ -29,11 +31,11 @@ public class HomeActivity extends AppCompatActivity {
 
         // Add images dynamically
         addImageToLayout(R.drawable.italy, "Italian Food", getResources().getDimensionPixelSize(R.dimen.image_height));
-        addImageToLayout(R.drawable.israel, "Israeli Food", getResources().getDimensionPixelSize(R.dimen.image_height));
         addImageToLayout(R.drawable.china, "Chinese Food", getResources().getDimensionPixelSize(R.dimen.image_height));
         addImageToLayout(R.drawable.japan, "Japanese Food", getResources().getDimensionPixelSize(R.dimen.image_height));
         addImageToLayout(R.drawable.mexico, "Mexican Food", getResources().getDimensionPixelSize(R.dimen.image_height));
         addImageToLayout(R.drawable.greece, "Greek Food", getResources().getDimensionPixelSize(R.dimen.image_height));
+        addImageToLayout(R.drawable.israel, "Israeli Food", getResources().getDimensionPixelSize(R.dimen.image_height));
         addImageToLayout(R.drawable.france, "French Food", getResources().getDimensionPixelSize(R.dimen.image_height));
     }
 
@@ -113,6 +115,11 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    public void viewCart(View view) {
+        Intent intent = new Intent(this, CartActivity.class);
+        intent.putExtra("cartItems", new ArrayList<>(CartManager.getCartItems())); // Pass the cart items to the CartActivity
+        startActivity(intent);
     }
 
     private void logout() {

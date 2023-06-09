@@ -33,12 +33,15 @@ public class RegistrationActivity extends AppCompatActivity {
     private ProgressBar progressBar;
 
     private SharedPreferences sharedPreferences;
+    FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
+        auth =  FirebaseAuth.getInstance();
         // Initialize views
         nameEditText = findViewById(R.id.nameEditText);
         emailEditText = findViewById(R.id.emailEditText);
@@ -90,7 +93,6 @@ public class RegistrationActivity extends AppCompatActivity {
 
         progressBar.setVisibility(View.VISIBLE);
 
-        FirebaseAuth auth = FirebaseAuth.getInstance();
 
         // Enter User data into the Firebase Realtime Database
         ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(passwordEditText);
